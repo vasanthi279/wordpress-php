@@ -156,7 +156,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 			// Using offsetHeight as a replacement for computed.height in IE, because IE does not account use of border-box
 			var actualHeight = computed.boxSizing === 'content-box' ? Math.round(parseFloat(computed.height)) : ta.offsetHeight;
 
-			// The actual height not matching the style height (set via the resize method) indicates that 
+			// The actual height not matching the style height (set via the resize method) indicates that
 			// the max-height has been exceeded, in which case the overflow should be allowed.
 			if (actualHeight < styleHeight) {
 				if (computed.overflowY === 'hidden') {
@@ -426,7 +426,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 			blob,
 			reader;
 			myBlob= myBlob.call ? myBlob.bind(self) : Blob ;
-	  
+
 		if(String(this)==="true"){ //reverse arguments, allowing download.bind(true, "text/xml", "export.xml") to act as a callback
 			payload=[payload, mimeType];
 			mimeType=payload[0];
@@ -441,7 +441,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         		var ajax=new XMLHttpRequest();
         		ajax.open( "GET", url, true);
         		ajax.responseType = 'blob';
-        		ajax.onload= function(e){ 
+        		ajax.onload= function(e){
 				  download(e.target.response, fileName, defaultMime);
 				};
         		setTimeout(function(){ ajax.send();}, 0); // allows setting custom ajax headers using the return:
@@ -452,22 +452,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 		//go ahead and download dataURLs right away
 		if(/^data:([\w+-]+\/[\w+.-]+)?[,;]/.test(payload)){
-		
+
 			if(payload.length > (1024*1024*1.999) && myBlob !== toString ){
 				payload=dataUrlToBlob(payload);
 				mimeType=payload.type || defaultMime;
-			}else{			
+			}else{
 				return navigator.msSaveBlob ?  // IE10 can't do a[download], only Blobs:
 					navigator.msSaveBlob(dataUrlToBlob(payload), fileName) :
 					saver(payload) ; // everyone else can save dataURLs un-processed
 			}
-			
+
 		}else{//not data url, is it a string with special needs?
-			if(/([\x80-\xff])/.test(payload)){			  
+			if(/([\x80-\xff])/.test(payload)){
 				var i=0, tempUiArr= new Uint8Array(payload.length), mx=tempUiArr.length;
 				for(i;i<mx;++i) tempUiArr[i]= payload.charCodeAt(i);
 			 	payload=new myBlob([tempUiArr], {type: mimeType});
-			}		  
+			}
 		}
 		blob = payload instanceof myBlob ?
 			payload :
@@ -1182,7 +1182,7 @@ module.exports = window["React"];
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -1196,14 +1196,14 @@ module.exports = window["React"];
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	!function() {
@@ -1216,7 +1216,7 @@ module.exports = window["React"];
 /******/ 			return getter;
 /******/ 		};
 /******/ 	}();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -1228,12 +1228,12 @@ module.exports = window["React"];
 /******/ 			}
 /******/ 		};
 /******/ 	}();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	!function() {
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -1244,7 +1244,7 @@ module.exports = window["React"];
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	}();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -10750,7 +10750,7 @@ function ScreenTypographyElement(_ref) {
     __nextHasNoMarginBottom: true
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.__experimentalToggleGroupControlOption, {
     value: "heading"
-    /* translators: 'All' refers to selecting all heading levels 
+    /* translators: 'All' refers to selecting all heading levels
     and applying the same style to h1-h6. */
     ,
     label: (0,external_wp_i18n_namespaceObject.__)('All')

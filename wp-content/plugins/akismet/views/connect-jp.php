@@ -37,14 +37,14 @@
 		<?php } elseif ( $akismet_user->status == 'suspended' ) { ?>
 		<div class="akismet-right">
 			<p><a href="https://akismet.com/contact" class="akismet-button akismet-is-primary"><?php esc_html_e( 'Contact Akismet support' , 'akismet' ); ?></a></p>
-		</div>		
+		</div>
 		<p>
 			<span class="akismet-alert-text"><?php
 				/* translators: %s is the WordPress.com email address */
                 echo esc_html( sprintf( __( 'Your subscription for %s is suspended.' , 'akismet' ), $akismet_user->user_email ) ); ?></span>
 			<?php esc_html_e( 'No worries! Get in touch and we&#8217;ll sort this out.', 'akismet' ); ?>
 		</p>
-		<?php } else { // ask do they want to use akismet account found using jetpack wpcom connection ?>			
+		<?php } else { // ask do they want to use akismet account found using jetpack wpcom connection ?>
 		<p><?php esc_html_e( 'Use your Jetpack connection to set up Akismet.', 'akismet' ); ?></p>
 		<form name="akismet_use_wpcom_key" action="<?php echo esc_url( Akismet_Admin::get_page_url() ); ?>" method="post" id="akismet-activate" class="akismet-right">
 			<input type="hidden" name="key" value="<?php echo esc_attr( $akismet_user->api_key );?>"/>

@@ -39,5 +39,3 @@ window.JSHINT.data = function(){
 		errors: fakeJSHINT.data
 	};
 };
-
-
